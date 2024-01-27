@@ -21,7 +21,10 @@ sprites = [
 	[spr_player_punch],
 	
 	//heavy attack
-	[spr_player_heavy_punch]
+	[spr_player_heavy_punch],
+	
+	//parried
+	[spr_player_parried]
 ];
 
 spr = spr_player_idle;
@@ -168,10 +171,20 @@ muda_estado = function(){
 			var _yy = y - sprite_get_height(spr)*.2;
 			
 			
-			termina_animacao(true, _xx, _yy, 2);
+			termina_animacao(true, _xx, _yy, 2, obj_player);
 		
 		break;
 		}//termina heavy 
+	
+		case "parried":{
+		
+			mov_state = 4;
+			
+			muda_sprite(0);
+			
+			termina_animacao();
+		
+		}
 	
 	}//termina swtich state
 

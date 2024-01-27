@@ -1,12 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-dmg = 1;
-
-alarm[0] = 1;
-
-
-criado_por = noone;
+xscale = sign(x - obj_player.x);
 
 
 

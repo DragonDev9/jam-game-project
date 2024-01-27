@@ -8,7 +8,7 @@
 hsp = 0;
 vsp = 0;
 
-max_hsp = 3;
+max_hsp = 1;
 max_vsp = 15;
 
 //hp
@@ -45,6 +45,7 @@ state = "idle";
 
 //dmg
 hit = 0;
+tempo_parry = 0;
 
 #endregion
 
@@ -82,9 +83,15 @@ muda_sprite = function(_ind){
 }//termina muda sprite
 
 ///@function termina_animacao
-termina_animacao = function(_hitbox = false, _xx = 0, _yy = 0, _dmg = 0){
+termina_animacao = function(_hitbox = false, _xx = 0, _yy = 0, _dmg = 0, _criador = obj_entidades){
 
-	if spr_index+spr_spd >= spr_num{
+	
+	var _terminar = spr_index+spr_spd >= spr_num && tempo_parry = 0;
+	var _parry = spr_index + spr_spd >= spr_num && tempo_parry > 0;
+
+	if tempo_parry > 0 tempo_parry--;
+
+	if _terminar{
 			
 				if _hitbox{
 				
@@ -92,14 +99,16 @@ termina_animacao = function(_hitbox = false, _xx = 0, _yy = 0, _dmg = 0){
 					
 					_box.dmg = _dmg;
 				
-				
+					_box.criado_por = _criador;
 				}
 				
-				
-			
 				state = "idle";
 			
-		}
+	}else if _parry{
+	
+		spr_index = spr_num+1;
+	
+	}
 
 
 }//termina animacao
