@@ -3,10 +3,18 @@ event_inherited();
 
 spr = spr_dummy;
 
-state = "prepare_dash";
+state = "idle";
 
 tempo_dash = 60;
 
-destino_dash = 0;
+destinos = 0;
 
 dash_spd = 30;
+
+/////////////////////////////
+
+tempo_atirar = 40;
+
+troca_estado = 30;
+
+randomize();

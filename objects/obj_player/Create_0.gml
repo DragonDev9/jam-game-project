@@ -152,7 +152,7 @@ muda_estado = function(){
 			
 			////////////////////
 			
-			termina_animacao(true,_xx,_yy,1);
+			termina_animacao(true,_xx,_yy,1, obj_player);
 		
 		break;
 		}//termina light

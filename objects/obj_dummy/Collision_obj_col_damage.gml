@@ -11,7 +11,8 @@ if state != "parry"{
 		tempo_parry = 60;
 	}
 
-	state = "idle";
+	troca_estado = 30;
+	state = "trocar";
 
 }
 
